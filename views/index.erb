@@ -6,15 +6,15 @@
         <a href='login'><img src='images/fb_login_button.png'></a>
 <% end %>
 
-<h3><%= 'Hello, ' + session['fb_auth']['info']['first_name'] + ', ' if session['fb_token'] %>Welcome to my list of interesting articles.</h3>
+<h3><%= 'Hey, ' + session['fb_auth']['info']['first_name'] + ', ' if session['fb_token'] %>It's time to start getting motivated with Stride!</h3>
 
 <table>
-        <% @articles.each do |article| %>
+        <% @stats.each do |stat| %>
         <tr>
-                <td class='article'>- <a href='<%=article[:url]%>' target='_blank'><%=article[:title]%></a></td>
+                <td class='stat'>- <a href='<%=stat[:url]%>' target='_blank'><%=stat[:title]%></a></td>
                 <td>
                         <% if session['fb_auth'] %>
-                                <iframe src="http://www.facebook.com/plugins/like.php?href=<%=article[:url]%>&amp;layout=button_count&amp;show_faces=true&amp;width=450&amp;action=like&amp;colorscheme=light&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:21px;" allowTransparency="true"></iframe>
+                                <iframe src="http://www.facebook.com/plugins/like.php?href=<%=stat[:url]%>&amp;layout=button_count&amp;show_faces=true&amp;width=450&amp;action=like&amp;colorscheme=light&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:21px;" allowTransparency="true"></iframe>
                         <% end %>
                 </td>
         </tr>

@@ -23,10 +23,10 @@ use OmniAuth::Builder do
 end
 
 get_post '/' do
-  @articles = []
-  @articles << {:title => 'Getting Started with Heroku', :url => 'https://devcenter.heroku.com/articles/quickstart'}
-  @articles << {:title => 'Deploying Rack-based apps in Heroku', :url => 'http://docs.heroku.com/rack'}
-  @articles << {:title => 'Learn Ruby in twenty minutes', :url => 'http://www.ruby-lang.org/en/documentation/quickstart/'}
+  @stats = []
+  @stats << {:title => 'Steps', :url => 'https://devcenter.heroku.com/articles/quickstart'}
+  @stats << {:title => 'Calories Burned', :url => 'http://docs.heroku.com/rack'}
+  @stats << {:title => 'Days Since Last Run', :url => 'http://www.ruby-lang.org/en/documentation/quickstart/'}
 
   erb :index
 end
