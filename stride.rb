@@ -22,12 +22,24 @@ use OmniAuth::Builder do
   provider :facebook, APP_ID, APP_SECRET, { :scope => 'email, status_update, publish_stream' }
 end
 
-get_post '/' do
-  @stats = []
-  @stats << {:title => 'Steps', :url => 'https://devcenter.heroku.com/articles/quickstart'}
-  @stats << {:title => 'Calories Burned', :url => 'http://docs.heroku.com/rack'}
-  @stats << {:title => 'Days Since Last Run', :url => 'http://www.ruby-lang.org/en/documentation/quickstart/'}
+class Stat
+  attr_accessor :title, :count
 
+  def initialize(title,count)
+    @title = title
+    @count = count
+  end
+end
+
+get_post '/' do
+  #steps = Stat.new("Steps", 13872)
+  #cal = Stat.new("calories", 1349)
+  #days = Stat.new("Days Since Last Run", 3)
+  #@stats = [steps,cal,days]
+  @stats = []
+  @stats << {:title => 'Steps: 45679'}
+  @stats << {:title => 'Calories: 1356'}
+  @stats << {:title => 'Days Since Last Run: 3'}
   erb :index
 end
 
