@@ -38,8 +38,8 @@ get_post '/' do
   #@stats = [steps,cal,days]
   @stats = []
   @stats << {:title => 'Steps: 45679'}
-  @stats << {:title => 'Calories: 1356'}
-  @stats << {:title => 'Days Since Last Run: 3'}
+  @stats << {:title => 'Calories Burned from Stride Activity: 2283.95'}
+  @stats << {:title => 'Days Since Last Run: 0'}
   erb :index
 end
 

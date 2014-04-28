@@ -17,6 +17,14 @@
                                 <iframe src="http://www.facebook.com/plugins/like.php&amp;layout=button_count&amp;show_faces=true&amp;width=450&amp;action=like&amp;colorscheme=light&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:21px;" allowTransparency="true"></iframe>
                         <% end %>
                 </td>
+                <td>
+                        <% if stat[:title].include? "Steps" %>
+                        <img src='images/stepgraph.png'>
+                </td>
+                <td>
+                        <% if stat[:title].include? "Calories" %>
+                        <img src='images/caloriegraph.png'>
+                </td>
         </tr>
         <% end %>
 </table>
